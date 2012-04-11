@@ -50,6 +50,7 @@ namespace CefSharp.Wpf.Example
         {
             InitializeComponent();
 
+            web_view.DownloadHandler = new DownloadHandler();
             var presenter = new ExamplePresenter(web_view, this,
                 invoke => Dispatcher.BeginInvoke(invoke));
 
@@ -149,6 +150,28 @@ namespace CefSharp.Wpf.Example
             {
                 handler(this, urlTextBox.Text);
             }
+        }
+
+        private class DownloadHandler : IDownload
+        {
+
+            #region IDownload Members
+
+            public void HandleComplete()
+            {
+            }
+
+            public bool HandleDownload(IWebBrowser browserControl, string mimeType, string fileName)
+            {
+                return true;
+            }
+
+            public bool HandleReceivedData()
+            {
+                return true;
+            }
+
+            #endregion
         }
     }
 }
