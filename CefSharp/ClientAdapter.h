@@ -18,6 +18,7 @@ namespace CefSharp
                           public CefMenuHandler,
                           public CefFocusHandler,
                           public CefKeyboardHandler
+						  public CefDownloadHandler
     {
     private:
         gcroot<IWebBrowser^> _browserControl;
