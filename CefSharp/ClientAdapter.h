@@ -17,7 +17,7 @@ namespace CefSharp
                           public CefV8ContextHandler,
                           public CefMenuHandler,
                           public CefFocusHandler,
-                          public CefKeyboardHandler
+                          public CefKeyboardHandler,
 						  public CefDownloadHandler
     {
     private:
